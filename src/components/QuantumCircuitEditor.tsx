@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { Play, SquareX, SquareCheck, SquarePlus } from 'lucide-react';
 
@@ -19,7 +18,7 @@ const QuantumCircuitEditor: React.FC<QuantumCircuitEditorProps> = ({
   isSimulating
 }) => {
   const [gates, setGates] = useState<Gate[]>([]);
-  const [draggedGate, setDraggedGate] = useState<string | null>(null);
+  const [draggedGate, setDraggedGate] = useState<Gate['type'] | null>(null);
   const circuitRef = useRef<HTMLDivElement>(null);
 
   const gateTypes = [
