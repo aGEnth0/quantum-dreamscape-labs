@@ -1,9 +1,12 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import ExperimentCard from '../components/ExperimentCard';
 
 const Index = () => {
+  const navigate = useNavigate();
+
   const experiments = [
     {
       id: 'entanglement',
@@ -57,8 +60,7 @@ const Index = () => {
 
   const handleExperimentClick = (experimentId: string) => {
     console.log(`Starting experiment: ${experimentId}`);
-    // Here we would typically navigate to the experiment page or open a modal
-    // For now, we'll log the action
+    navigate('/experiment');
   };
 
   return (
